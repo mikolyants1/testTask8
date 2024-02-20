@@ -1,0 +1,33 @@
+.body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input {
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(210, 210, 210);
+    height: 30px;
+}
+.time {
+    margin-top: 20px;
+    font-size: 40px;
+    color: rgb(242, 70, 70);
+}
+
+.link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+a {
+    color: blueviolet;
+}
+.done {
+    font-size: 24px;
+}
