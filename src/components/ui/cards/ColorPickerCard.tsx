@@ -25,11 +25,13 @@ function ColorPickerCard():JSX.Element {
         color:hex,
         idx:state.index
       });
-    } else setColor(hex);
-    dispatch({
-      isUpdate:false,
-      open:false
-    });
+    } else {
+      setColor(hex);
+      dispatch({
+       isUpdate:false,
+       open:false
+      });
+    };
   };
 
   return (
@@ -43,7 +45,7 @@ function ColorPickerCard():JSX.Element {
        <button
         className={styles.add}
         onClick={add}>
-          add color
+         {state.isUpdate ? "change" : "add"} color
        </button>
     </div>
   )

@@ -15,23 +15,23 @@ function Timer():JSX.Element {
     if (start){
       timer.current = setInterval(():void=>{
         setNow((prv:ITime)=>{
-            const sec = prv.sec - 1;
-            if (prv.min == 0 && prv.sec == 0){
-                clearInterval(timer.current);
-                setDone("done");
-                return {min:0,sec:0};
-               };
-            if (sec < 0){
-                return {
-                  min:prv.min - 1,
-                  sec:59
-                };
-            };
+          const sec:number = prv.sec - 1;
+          if (prv.min == 0 && prv.sec == 0){
+            clearInterval(timer.current);
+            setDone("done");
+            return {...prv};
+          };
+          if (sec < 0){
             return {
-              min:prv.min,sec
+              min:prv.min - 1,
+              sec:59
             };
+          };
+          return {
+            min:prv.min,sec
+          };
         });
-        },1000);
+      },1000);
     }
   },[start]);
 

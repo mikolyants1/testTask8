@@ -26,8 +26,8 @@ function Palette():JSX.Element {
            idx={idx}
           />
          ))}
-         </div>
-       </Context.Provider>
+        </div>
+      </Context.Provider>
     </div>
   )
 }
