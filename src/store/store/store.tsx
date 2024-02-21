@@ -5,7 +5,7 @@ persistStore } from 'redux-persist'
 import {combineReducers,configureStore,bindActionCreators,
 CaseReducerActions} from '@reduxjs/toolkit'
 import {useDispatch,useSelector,TypedUseSelectorHook} from 'react-redux'
-import { IAction, IColor, Pay } from "../../types/type";
+import { AppDispatch, IAction, IColor, Pay, RootState } from "../../types/type";
 
  interface state {
     color:IColor
@@ -33,9 +33,6 @@ export type bind=CaseReducerActions<{
     chanColor:(state:IColor,action:Pay<IAction>)=>void,
 },"colors">;
 
-export type RootState = ReturnType<typeof store.getState>;
-
-type AppDispatch = typeof store.dispatch;
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 

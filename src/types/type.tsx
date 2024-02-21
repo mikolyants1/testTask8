@@ -1,5 +1,6 @@
 import {PayloadAction} from '@reduxjs/toolkit'
 import { Dispatch} from 'react'
+import { store } from '../store/store/store'
 
 export interface IColor {
     colors:string[]
@@ -27,3 +28,7 @@ export interface IOpen {
     dispatch:Dispatch<Action>
 }
 export type Pay<T> = PayloadAction<T>;
+
+export type RootState = ReturnType<typeof store.getState>;
+
+export type AppDispatch = typeof store.dispatch;
